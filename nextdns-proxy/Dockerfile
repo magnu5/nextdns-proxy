@@ -1,5 +1,5 @@
 #!/bin/bash
-FROM debian:arm64
+FROM debian:latest
 
 EXPOSE 53
 EXPOSE 53/udp
@@ -10,10 +10,10 @@ RUN apt-get install -fy apt-transport-https gnupg gpgv wget
 RUN wget -qO - https://nextdns.io/repo.gpg | apt-key add -
 RUN echo "deb https://nextdns.io/repo/deb stable main" | tee /etc/apt/sources.list.d/nextdns.list
 RUN apt-get update
-RUN apt-get remove dnsmasq
+RUN apt-get remove dnsmasq -y
 RUN apt-get dist-upgrade -y
 RUN apt-get autoremove -y
-RUN apt-get install -y nextdns
+RUN apt-get install nextdns -y
 
 RUN rm -rf /var/lib/apt/lists/*
 
