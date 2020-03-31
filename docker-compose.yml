@@ -3,7 +3,7 @@ version: '2.1'
 services:
 
   nextdns-proxy:
-    image: terafin/nextdns-proxy:latest
+    image: magnust/nextdns-proxy:latest
     network_mode: host
     privileged: true
     ports:
