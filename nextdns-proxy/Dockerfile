@@ -1,3 +1,4 @@
+#!/bin/bash
 FROM debian:latest
 
 EXPOSE 53
