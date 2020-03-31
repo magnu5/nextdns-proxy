@@ -10,7 +10,9 @@ RUN wget -qO - https://nextdns.io/repo.gpg | apt-key add -
 RUN echo "deb https://nextdns.io/repo/deb stable main" | tee /etc/apt/sources.list.d/nextdns.list
 RUN apt-get update
 RUN apt-get remove dnsmasq
-RUN apt-get install -fy nextdns
+RUN apt-get dist-upgrade -y
+RUN apt-get autoremove -y
+RUN apt-get install -y nextdns
 
 RUN rm -rf /var/lib/apt/lists/*
 
