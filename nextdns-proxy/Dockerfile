@@ -1,5 +1,5 @@
 #!/bin/bash
-FROM debian:latest
+FROM debian:latest-arm64
 
 EXPOSE 53
 EXPOSE 53/udp
