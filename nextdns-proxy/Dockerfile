@@ -1,4 +1,3 @@
-#!/bin/bash
 # Base image
 FROM debian:latest
 
