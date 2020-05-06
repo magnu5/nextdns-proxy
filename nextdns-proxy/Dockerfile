@@ -14,8 +14,8 @@ RUN wget -qO - https://nextdns.io/repo.gpg | apt-key add - && echo "deb https://
 
 # Copy scripts and make them executable
 WORKDIR /var/nextdns
-ADD run.sh /var/nextdns/run.sh
-RUN chmod guo+x /var/nextdns/run.sh
+ADD run.sh /var/nextdns
+RUN chmod guo+x run.sh && ./var/nextdns/run.sh
 
 # Run
 ENTRYPOINT /var/nextdns/run.sh
